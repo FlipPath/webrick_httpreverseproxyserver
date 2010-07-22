@@ -26,5 +26,5 @@ end
 
 desc 'Release gem'
 task :release => :build do
-  sh "gem push webrick_httpreverseproxyserver-#{WEBrick::HTTPReverseProxyServer::VERSION}"
+  sh "gem push webrick_httpreverseproxyserver-#{WEBrick::HTTPReverseProxyServer::VERSION}.gem"
 end

@@ -1,0 +1,14 @@
+= HTTP Reverse proxy server
+
+This library is not meant for production use. It is based on a snippet on
+RubyForge and was packaged as gem to make it easily available.
+
+Source: http://rubyforge.org/snippet/detail.php?type=snippet&id=117
+
+
+You may use this class, to programmatically set up a quick and simple reverse
+proxy. I found it useful to implement advanced inspection of an HTTP
+communication between an uncontrolled client and server.
+
+
+See WEBrick::HTTPReverseProxyServer for more information.

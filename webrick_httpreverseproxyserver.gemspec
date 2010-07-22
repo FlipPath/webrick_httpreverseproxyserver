@@ -6,7 +6,7 @@ require 'webrick/httpreverseproxyserver/version'
 Gem::Specification.new do |s|
   s.name = "webrick_httpreverseproxyserver"
   s.version = WEBrick::HTTPReverseProxyServer::VERSION
-  s.authors = ["Gregor Schmidt"]
+  s.authors = ["Richard Kernahan", "Gregor Schmidt"]
   s.email = "g.schmidt@finn.de"
   s.homepage = "http://github.com/finnlabs/webrick_httpreverseproxyserver"
   s.summary = "Implements a simple reverse HTTP proxy server"

@@ -113,7 +113,7 @@ module WEBrick
       return(matching_rule)
     end
 
-    def service_proxy(request, response, rule)
+    def service_proxy(request, res, rule)
       host, port, path  = map_to_proxyURI(request, rule)
       # convert WEBrick header (values wrapped in an array) into Net::HTTP
       # header (simple values)
@@ -138,16 +138,16 @@ module WEBrick
         logger.debug("#{err.class}: #{err.message}")
         raise HTTPStatus::ServiceUnavailable, err.message
       end
-      response['connection'] = "close"
+      res['connection'] = "close"
 
       # Convert Net::HTTP::HTTPResponse to WEBrick::HTTPResponse
-      response.status = response.code.to_i
-      response.each { |key, val| response[key] = val }
-      response.body = response.body
+      res.status = response.code.to_i
+      res.each { |key, val| response[key] = val }
+      res.body = response.body
 
       # Process contents
       if handler = @config[:ProxyContentHandler]
-        handler.call(request, response)
+        handler.call(request, res)
       end
     end
 

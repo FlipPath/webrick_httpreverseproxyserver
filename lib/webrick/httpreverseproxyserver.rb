@@ -105,7 +105,7 @@ module WEBrick
   protected
     # find the *first* matching pattern in the proxy map
     def first_matching_proxy_rule(request)
-      matching_rul = @config[:ProxyRules].detect { |rule|
+      matching_rule = @config[:ProxyRules].detect { |rule|
         re = Regexp.new(rule.pattern)
         m = re.match(request.path)
         not m.nil?
